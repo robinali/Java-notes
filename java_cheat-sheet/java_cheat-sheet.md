@@ -1,11 +1,11 @@
-java hierarchy
+java class hierarchy
 
-| [object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html)             |            |        |             |         |               |             |         |            |               |
+| [object]           |            |        |             |         |               |             |         |            |               |
 |--------------------|------------|--------|-------------|---------|---------------|-------------|---------|------------|---------------|
-| AbstractCollection |            |        |             |         |               | AbstractMap |         | ArrayDeque | StringBuilder |
-| AbstractList       |            |        | AbstractSet |         | AbstractQueue | HashMap     | TreeMap |            |               |
-| ArrayList          | LinkedList | Vector | HashSet     | TreeSet | PriorityQueue |             |         |            |               |
-|                    |            | Stack  |             |         |               |             |         |            |               |
+| [AbstractCollection] |            |        |             |         |               | [AbstractMap] |         | [ArrayDeque] | [StringBuilder] |
+| [AbstractList]      |            |        | [AbstractSet] |         | [AbstractQueue] | [HashMap]     | [TreeMap] |            |               |
+| [ArrayList]          | [LinkedList] | [Vector] | [HashSet]     | [TreeSet] | [PriorityQueue] |             |         |            |               |
+|                    |            | [Stack]  |             |         |               |             |         |            |               |
 
 ## [Binary Literals](https://docs.oracle.com/javase/8/docs/technotes/guides/language/binary-literals.html)
 ```java
@@ -23,3 +23,23 @@ int anInt3 = 0B101; // The B can be upper or lower case.
 // A 64-bit 'long' value. Note the "L" suffix:
 long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L;
 ```
+[object]:https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
+[AbstractCollection]: https://docs.oracle.com/javase/7/docs/api/java/util/AbstractCollection.html
+[AbstractList]: https://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html
+[ArrayList]: https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
+[LinkedList]: https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html
+[Vector]: https://docs.oracle.com/javase/7/docs/api/java/util/Vector.html
+[Deque]: https://docs.oracle.com/javase/7/docs/api/java/util/Deque.html
+[ArrayDeque]: https://docs.oracle.com/javase/7/docs/api/java/util/ArrayDeque.html
+[Stack]: https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html
+[StringBuilder]: https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html
+[ArrayDeque]: https://docs.oracle.com/javase/7/docs/api/java/util/ArrayDeque.html
+[AbstractSet]: https://docs.oracle.com/javase/7/docs/api/java/util/AbstractSet.html
+[HashSet]: https://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html
+[TreeSet]: https://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html
+[AbstractMap]: https://docs.oracle.com/javase/7/docs/api/java/util/AbstractMap.html
+[HashMap]: https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html
+[TreeMap]: https://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html
+[Queue]: https://docs.oracle.com/javase/7/docs/api/java/util/Queue.html
+[PriorityQueue]: https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
+[AudioInputStream]:https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioInputStream.html
