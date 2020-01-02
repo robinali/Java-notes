@@ -1,4 +1,4 @@
-java class hierarchy
+##java class hierarchy
 
 | [object]           |            |        |             |         |               |             |         |            |               |
 |--------------------|------------|--------|-------------|---------|---------------|-------------|---------|------------|---------------|
@@ -23,6 +23,29 @@ int anInt3 = 0B101; // The B can be upper or lower case.
 // A 64-bit 'long' value. Note the "L" suffix:
 long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L;
 ```
+
+# Java ADT
+## [AbstractCollection]
+### [AbstractList]
+#### [ArrayList]
+#### [LinkedList]
+#### [Vector]
+##### [Stack]
+
+### [AbstractSet]
+#### [HashSet]
+#### [TreeSet]
+### [AbstractQueue]
+#### [PriorityQueue]
+
+## [AbstractMap]
+### [HashMap]
+### [TreeMap]
+
+## [Deque]
+### [ArrayDeque]
+
+
 [object]:https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
 [AbstractCollection]: https://docs.oracle.com/javase/7/docs/api/java/util/AbstractCollection.html
 [AbstractList]: https://docs.oracle.com/javase/7/docs/api/java/util/AbstractList.html
@@ -44,4 +67,3 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 [PriorityQueue]: https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
 [AudioInputStream]:https://docs.oracle.com/javase/7/docs/api/javax/sound/sampled/AudioInputStream.html
 [AbstractQueue]:https://docs.oracle.com/javase/7/docs/api/java/util/AbstractQueue.html
-
