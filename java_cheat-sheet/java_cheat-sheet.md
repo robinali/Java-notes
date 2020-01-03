@@ -1,4 +1,7 @@
-[TOC]
+# Table of Contents
+**[java class hierarchy](#java-class-hierarchy)**<br>
+**[Binary Literals](#Binary-Literals)**<br>
+**[Java ADT](#Java-ADT)**<br>
 
 ## java class hierarchy
 
