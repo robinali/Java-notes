@@ -154,3 +154,4 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 [PriorityQueue]: https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html
 [AudioInputStream]:https://docs.oracle.com/javase/8/docs/api/javax/sound/sampled/AudioInputStream.html
 [AbstractQueue]:https://docs.oracle.com/javase/8/docs/api/java/util/AbstractQueue.html
+[tableconvert]:https://tableconvert.com/
