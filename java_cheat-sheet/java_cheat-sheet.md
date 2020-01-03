@@ -50,12 +50,30 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 ### [TreeMap]
 
 ## [Deque]
-|         | First Element \(Head\) |               |Last Element \(Tail\) |                |
-|---------|------------------------|---------------|----------------------|----------------|
-|         | Throws exception       | Special value | Throws exception     | Special value  |
-| Insert  | addFirst\(e\)          |               | addLast\(e\)         | offerLast\(e\) |
-| Remove  | removeFirst\(\)        | pollFirst\(\) | removeLast\(\)       | pollLast\(\)   |
-| Examine | getFirst\(\)           | peekFirst\(\) | getLast\(\)          | peekLast\(\)   |
+* Summary of Deque methods
+|         | First Element \(Head\) |                 |Last Element \(Tail\) |                |
+|---------|------------------------|-----------------|----------------------|----------------|
+|         | Throws exception       | Special value   | Throws exception     | Special value  |
+| Insert  | addFirst\(e\)          | offerFirst\(e\) | addLast\(e\)         | offerLast\(e\) |
+| Remove  | removeFirst\(\)        | pollFirst\(\)   | removeLast\(\)       | pollLast\(\)   |
+| Examine | getFirst\(\)           | peekFirst\(\)   | getLast\(\)          | peekLast\(\)   |
+
+* Comparison of Queue and Deque methods
+| Queue Method | Equivalent Deque Method |
+|--------------|-------------------------|
+| add\(e\)     | addLast\(e\)            |
+| offer\(e\)   | offerLast\(e\)          |
+| remove\(\)   | removeFirst\(\)         |
+| poll\(\)     | pollFirst\(\)           |
+| element\(\)  | getFirst\(\)            |
+| peek\(\)     | peekFirst\(\)           |
+
+* Comparison of Stack and Deque methods
+| Stack Method | Equivalent Deque Method |
+|--------------|-------------------------|
+| push\(e\)    | addFirst\(e\)           |
+| pop\(\)      | removeFirst\(\)         |
+| peek\(\)     | peekFirst\(\)           |
 
 ### [ArrayDeque]
 
