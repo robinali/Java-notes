@@ -1,23 +1,24 @@
 # Table of Contents
-## [java class hierarchy](#java-class-hierarchy)
-## [Binary Literals](#Binary-Literals)
-## [Java ADT](#Java-ADT)
-### [AbstractCollection](#AbstractCollection)
-#### [AbstractList](#AbstractList)
-##### [ArrayList](#ArrayList)
-##### [LinkedList](#LinkedList)
-##### [Vector](#Vector)
-##### [Stack](#Stack)
-#### [AbstractSet](#AbstractSet)
-##### [HashSet](#HashSet)
-##### [TreeSet](#TreeSet)
-#### [AbstractQueue](#AbstractQueue)
-##### [PriorityQueue](#PriorityQueue)
-### [AbstractMap](#AbstractMap)
-#### [HashMap](#HashMap)
-#### [TreehMap](#TreehMap)
-### [Deque](#Deque)
-#### [ArrayDeque](#ArrayDeque)
+**[java class hierarchy](#java-class-hierarchy)**
+**[Binary Literals](#Binary-Literals)**
+
+**[Java ADT](#Java-ADT)**
+	**[AbstractCollection](#AbstractCollection)**
+		**[AbstractList](#AbstractList)**
+			**[ArrayList](#ArrayList)**
+			**[LinkedList](#LinkedList)**
+			**[Vector](#Vector)**
+				**[Stack](#Stack)**
+		**[AbstractSet](#AbstractSet)**
+			**[HashSet](#HashSet)**
+			**[TreeSet](#TreeSet)**
+		**[AbstractQueue](#AbstractQueue)**
+			**[PriorityQueue](#PriorityQueue)**
+		**[AbstractMap](#AbstractMap)**
+			**[HashMap](#HashMap)**
+			**[TreehMap](#TreehMap)**
+	**[Deque](#Deque)**
+		**[ArrayDeque](#ArrayDeque)**
 
 ## java class hierarchy
 
