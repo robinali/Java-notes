@@ -1,23 +1,23 @@
 # Table of Contents
-**[java class hierarchy](#java-class-hierarchy)**<br>
-**[Binary Literals](#Binary-Literals)**<br>
-**[Java ADT](#Java-ADT)**<br>
-***[AbstractCollection](#AbstractCollection)**<br>
-****[AbstractList](#AbstractList)**<br>
-*****[ArrayList](#ArrayList)**<br>
-*****[LinkedList](#LinkedList)**<br>
-*****[Vector](#Vector)**<br>
-*****[Stack](#Stack)**<br>
-****[AbstractSet](#AbstractSet)**<br>
-*****[HashSet](#HashSet)**<br>
-*****[TreeSet](#TreeSet)**<br>
-****[AbstractQueue](#AbstractQueue)**<br>
-*****[PriorityQueue](#PriorityQueue)**<br>
-***[AbstractMap](#AbstractMap)**<br>
-****[HashMap](#HashMap)**<br>
-****[TreehMap](#TreehMap)**<br>
-***[Deque](#Deque)**<br>
-****[ArrayDeque](#ArrayDeque)**<br>
+##[java class hierarchy](#java-class-hierarchy)**<br>
+##[Binary Literals](#Binary-Literals)**<br>
+##[Java ADT](#Java-ADT)**<br>
+###[AbstractCollection](#AbstractCollection)**<br>
+####[AbstractList](#AbstractList)**<br>
+#####[ArrayList](#ArrayList)**<br>
+#####[LinkedList](#LinkedList)**<br>
+#####[Vector](#Vector)**<br>
+#####[Stack](#Stack)**<br>
+####[AbstractSet](#AbstractSet)**<br>
+#####[HashSet](#HashSet)**<br>
+#####[TreeSet](#TreeSet)**<br>
+####[AbstractQueue](#AbstractQueue)**<br>
+#####[PriorityQueue](#PriorityQueue)**<br>
+###AbstractMap](#AbstractMap)**<br>
+####[HashMap](#HashMap)**<br>
+####[TreehMap](#TreehMap)**<br>
+###Deque](#Deque)**<br>
+####ArrayDeque](#ArrayDeque)**<br>
 
 ## java class hierarchy
 
