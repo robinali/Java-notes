@@ -2,6 +2,22 @@
 **[java class hierarchy](#java-class-hierarchy)**<br>
 **[Binary Literals](#Binary-Literals)**<br>
 **[Java ADT](#Java-ADT)**<br>
+***[AbstractCollection](#AbstractCollection)**<br>
+****[AbstractList](#AbstractList)**<br>
+*****[ArrayList](#ArrayList)**<br>
+*****[LinkedList](#LinkedList)**<br>
+*****[Vector](#Vector)**<br>
+*****[Stack](#Stack)**<br>
+****[AbstractSet](#AbstractSet)**<br>
+*****[HashSet](#HashSet)**<br>
+*****[TreeSet](#TreeSet)**<br>
+****[AbstractQueue](#AbstractQueue)**<br>
+*****[PriorityQueue](#PriorityQueue)**<br>
+***[AbstractMap](#AbstractMap)**<br>
+****[HashMap](#HashMap)**<br>
+****[TreehMap](#TreehMap)**<br>
+***[Deque](#Deque)**<br>
+****[ArrayDeque](#ArrayDeque)**<br>
 
 ## java class hierarchy
 
@@ -31,6 +47,23 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 
 # Java ADT
 ## [AbstractCollection]
+| Modifier and Type    | Method and Description                                                                                                                                           |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean              | add\(E e\) \#Ensures that this collection contains the specified element \(optional operation\)\.                                                                |
+| boolean              | addAll\(Collection<? extends E> c\) \#Adds all of the elements in the specified collection to this collection \(optional operation\)\.                           |
+| void                 | clear\(\) \#Removes all of the elements from this collection \(optional operation\)\.                                                                            |
+| boolean              | contains\(Object o\) \#Returns true if this collection contains the specified element\.                                                                          |
+| boolean              | containsAll\(Collection<?> c\) \#Returns true if this collection contains all of the elements in the specified collection\.                                      |
+| boolean              | isEmpty\(\) \#Returns true if this collection contains no elements\.                                                                                             |
+| abstract Iterator<E> | iterator\(\) \#Returns an iterator over the elements contained in this collection\.                                                                              |
+| boolean              | remove\(Object o\) \#Removes a single instance of the specified element from this collection, if it is present \(optional operation\)\.                          |
+| boolean              | removeAll\(Collection<?> c\) \#Removes all of this collection's elements that are also contained in the specified collection \(optional operation\)\.            |
+| boolean              | retainAll\(Collection<?> c\) \#Retains only the elements in this collection that are contained in the specified collection \(optional operation\)\.              |
+| abstract int         | size\(\) \#Returns the number of elements in this collection\.                                                                                                   |
+| Object\[\]           | toArray\(\) \#Returns an array containing all of the elements in this collection\.                                                                               |
+| <T> T\[\]            | toArray\(T\[\] a\) \#Returns an array containing all of the elements in this collection; the runtime type of the returned array is that of the specified array\. |
+| String               | toString\(\) \#Returns a string representation of this collection\.                                                                                              |
+
 ### [AbstractList]
 | Modifier and Type | Method and Description                                                                                                                                                     |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -52,8 +85,138 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 | List<E>           | subList\(int fromIndex, int toIndex\) \#Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive\.                    |
 
 #### [ArrayList]
+| Modifier and Type | Method and Description                                                                                                                                                                                       |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean           | add\(E e\) \#Appends the specified element to the end of this list\.                                                                                                                                         |
+| void              | add\(int index, E element\) \#Inserts the specified element at the specified position in this list\.                                                                                                         |
+| boolean           | addAll\(Collection<? extends E> c\) \#Appends all of the elements in the specified collection to the end of this list, in the order that they are returned by the specified collection's Iterator\.          |
+| boolean           | addAll\(int index, Collection<? extends E> c\) \#Inserts all of the elements in the specified collection into this list, starting at the specified position\.                                                |
+| void              | clear\(\) \#Removes all of the elements from this list\.                                                                                                                                                     |
+| Object            | clone\(\) \#Returns a shallow copy of this ArrayList instance\.                                                                                                                                              |
+| boolean           | contains\(Object o\) \#Returns true if this list contains the specified element\.                                                                                                                            |
+| void              | ensureCapacity\(int minCapacity\) \#Increases the capacity of this ArrayList instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument\. |
+| void              | forEach\(Consumer<? super E> action\) \#Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception\.                                |
+| E                 | get\(int index\) \#Returns the element at the specified position in this list\.                                                                                                                              |
+| int               | indexOf\(Object o\) \#Returns the index of the first occurrence of the specified element in this list, or \-1 if this list does not contain the element\.                                                    |
+| boolean           | isEmpty\(\) \#Returns true if this list contains no elements\.                                                                                                                                               |
+| Iterator<E>       | iterator\(\) \#Returns an iterator over the elements in this list in proper sequence\.                                                                                                                       |
+| int               | lastIndexOf\(Object o\) \#Returns the index of the last occurrence of the specified element in this list, or \-1 if this list does not contain the element\.                                                 |
+| ListIterator<E>   | listIterator\(\) \#Returns a list iterator over the elements in this list \(in proper sequence\)\.                                                                                                           |
+| ListIterator<E>   | listIterator\(int index\) \#Returns a list iterator over the elements in this list \(in proper sequence\), starting at the specified position in the list\.                                                  |
+| E                 | remove\(int index\) \#Removes the element at the specified position in this list\.                                                                                                                           |
+| boolean           | remove\(Object o\) \#Removes the first occurrence of the specified element from this list, if it is present\.                                                                                                |
+| boolean           | removeAll\(Collection<?> c\) \#Removes from this list all of its elements that are contained in the specified collection\.                                                                                   |
+| boolean           | removeIf\(Predicate<? super E> filter\) \#Removes all of the elements of this collection that satisfy the given predicate\.                                                                                  |
+| protected void    | removeRange\(int fromIndex, int toIndex\) \#Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive\.                                                 |
+| void              | replaceAll\(UnaryOperator<E> operator\) \#Replaces each element of this list with the result of applying the operator to that element\.                                                                      |
+| boolean           | retainAll\(Collection<?> c\) \#Retains only the elements in this list that are contained in the specified collection\.                                                                                       |
+| E                 | set\(int index, E element\) \#Replaces the element at the specified position in this list with the specified element\.                                                                                       |
+| int               | size\(\) \#Returns the number of elements in this list\.                                                                                                                                                     |
+| void              | sort\(Comparator<? super E> c\) \#Sorts this list according to the order induced by the specified Comparator\.                                                                                               |
+| Spliterator<E>    | spliterator\(\) \#Creates a late\-binding and fail\-fast Spliterator over the elements in this list\.                                                                                                        |
+| List<E>           | subList\(int fromIndex, int toIndex\) \#Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive\.                                                      |
+| Object\[\]        | toArray\(\) \#Returns an array containing all of the elements in this list in proper sequence \(from first to last element\)\.                                                                               |
+| <T> T\[\]         | toArray\(T\[\] a\) \#Returns an array containing all of the elements in this list in proper sequence \(from first to last element\); the runtime type of the returned array is that of the specified array\. |
+| void              | trimToSize\(\) \#Trims the capacity of this ArrayList instance to be the list's current size\.                                                                                                               |
+
 #### [LinkedList]
+| Modifier and Type | Method and Description                                                                                                                                                                                       |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean           | add\(E e\) \#Appends the specified element to the end of this list\.                                                                                                                                         |
+| void              | add\(int index, E element\) \#Inserts the specified element at the specified position in this list\.                                                                                                         |
+| boolean           | addAll\(Collection<? extends E> c\) \#Appends all of the elements in the specified collection to the end of this list, in the order that they are returned by the specified collection's iterator\.          |
+| boolean           | addAll\(int index, Collection<? extends E> c\) \#Inserts all of the elements in the specified collection into this list, starting at the specified position\.                                                |
+| void              | addFirst\(E e\) \#Inserts the specified element at the beginning of this list\.                                                                                                                              |
+| void              | addLast\(E e\) \#Appends the specified element to the end of this list\.                                                                                                                                     |
+| void              | clear\(\) \#Removes all of the elements from this list\.                                                                                                                                                     |
+| Object            | clone\(\) \#Returns a shallow copy of this LinkedList\.                                                                                                                                                      |
+| boolean           | contains\(Object o\) \#Returns true if this list contains the specified element\.                                                                                                                            |
+| Iterator<E>       | descendingIterator\(\) \#Returns an iterator over the elements in this deque in reverse sequential order\.                                                                                                   |
+| E                 | element\(\) \#Retrieves, but does not remove, the head \(first element\) of this list\.                                                                                                                      |
+| E                 | get\(int index\) \#Returns the element at the specified position in this list\.                                                                                                                              |
+| E                 | getFirst\(\) \#Returns the first element in this list\.                                                                                                                                                      |
+| E                 | getLast\(\) \#Returns the last element in this list\.                                                                                                                                                        |
+| int               | indexOf\(Object o\) \#Returns the index of the first occurrence of the specified element in this list, or \-1 if this list does not contain the element\.                                                    |
+| int               | lastIndexOf\(Object o\) \#Returns the index of the last occurrence of the specified element in this list, or \-1 if this list does not contain the element\.                                                 |
+| ListIterator<E>   | listIterator\(int index\) \#Returns a list\-iterator of the elements in this list \(in proper sequence\), starting at the specified position in the list\.                                                   |
+| boolean           | offer\(E e\) \#Adds the specified element as the tail \(last element\) of this list\.                                                                                                                        |
+| boolean           | offerFirst\(E e\) \#Inserts the specified element at the front of this list\.                                                                                                                                |
+| boolean           | offerLast\(E e\) \#Inserts the specified element at the end of this list\.                                                                                                                                   |
+| E                 | peek\(\) \#Retrieves, but does not remove, the head \(first element\) of this list\.                                                                                                                         |
+| E                 | peekFirst\(\) \#Retrieves, but does not remove, the first element of this list, or returns null if this list is empty\.                                                                                      |
+| E                 | peekLast\(\) \#Retrieves, but does not remove, the last element of this list, or returns null if this list is empty\.                                                                                        |
+| E                 | poll\(\) \#Retrieves and removes the head \(first element\) of this list\.                                                                                                                                   |
+| E                 | pollFirst\(\) \#Retrieves and removes the first element of this list, or returns null if this list is empty\.                                                                                                |
+| E                 | pollLast\(\) \#Retrieves and removes the last element of this list, or returns null if this list is empty\.                                                                                                  |
+| E                 | pop\(\) \#Pops an element from the stack represented by this list\.                                                                                                                                          |
+| void              | push\(E e\) \#Pushes an element onto the stack represented by this list\.                                                                                                                                    |
+| E                 | remove\(\) \#Retrieves and removes the head \(first element\) of this list\.                                                                                                                                 |
+| E                 | remove\(int index\) \#Removes the element at the specified position in this list\.                                                                                                                           |
+| boolean           | remove\(Object o\) \#Removes the first occurrence of the specified element from this list, if it is present\.                                                                                                |
+| E                 | removeFirst\(\) \#Removes and returns the first element from this list\.                                                                                                                                     |
+| boolean           | removeFirstOccurrence\(Object o\) \#Removes the first occurrence of the specified element in this list \(when traversing the list from head to tail\)\.                                                      |
+| E                 | removeLast\(\) \#Removes and returns the last element from this list\.                                                                                                                                       |
+| boolean           | removeLastOccurrence\(Object o\) \#Removes the last occurrence of the specified element in this list \(when traversing the list from head to tail\)\.                                                        |
+| E                 | set\(int index, E element\) \#Replaces the element at the specified position in this list with the specified element\.                                                                                       |
+| int               | size\(\) \#Returns the number of elements in this list\.                                                                                                                                                     |
+| Spliterator<E>    | spliterator\(\) \#Creates a late\-binding and fail\-fast Spliterator over the elements in this list\.                                                                                                        |
+| Object\[\]        | toArray\(\) \#Returns an array containing all of the elements in this list in proper sequence \(from first to last element\)\.                                                                               |
+| <T> T\[\]         | toArray\(T\[\] a\) \#Returns an array containing all of the elements in this list in proper sequence \(from first to last element\); the runtime type of the returned array is that of the specified array\. |
+
 #### [Vector]
+| Modifier and Type | Method and Description                                                                                                                                                                                |
+|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean           | add\(E e\)\#Appends the specified element to the end of this Vector\.                                                                                                                                 |
+| void              | add\(int index, E element\) \#Inserts the specified element at the specified position in this Vector\.                                                                                                |
+| boolean           | addAll\(Collection<? extends E> c\) \#Appends all of the elements in the specified Collection to the end of this Vector, in the order that they are returned by the specified Collection's Iterator\. |
+| boolean           | addAll\(int index, Collection<? extends E> c\) \#Inserts all of the elements in the specified Collection into this Vector at the specified position\.                                                 |
+| void              | addElement\(E obj\) \#Adds the specified component to the end of this vector, increasing its size by one\.                                                                                            |
+| int               | capacity\(\) \#Returns the current capacity of this vector\.                                                                                                                                          |
+| void              | clear\(\) \#Removes all of the elements from this Vector\.                                                                                                                                            |
+| Object            | clone\(\) \#Returns a clone of this vector\.                                                                                                                                                          |
+| boolean           | contains\(Object o\) \#Returns true if this vector contains the specified element\.                                                                                                                   |
+| boolean           | containsAll\(Collection<?> c\) \#Returns true if this Vector contains all of the elements in the specified Collection\.                                                                               |
+| void              | copyInto\(Object\[\] anArray\) \#Copies the components of this vector into the specified array\.                                                                                                      |
+| E                 | elementAt\(int index\) \#Returns the component at the specified index\.                                                                                                                               |
+| Enumeration<E>    | elements\(\) \#Returns an enumeration of the components of this vector\.                                                                                                                              |
+| void              | ensureCapacity\(int minCapacity\) \#Increases the capacity of this vector, if necessary, to ensure that it can hold at least the number of components specified by the minimum capacity argument\.    |
+| boolean           | equals\(Object o\) \#Compares the specified Object with this Vector for equality\.                                                                                                                    |
+| E                 | firstElement\(\) \#Returns the first component \(the item at index 0\) of this vector\.                                                                                                               |
+| void              | forEach\(Consumer<? super E> action\) \#Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception\.                         |
+| E                 | get\(int index\) \#Returns the element at the specified position in this Vector\.                                                                                                                     |
+| int               | hashCode\(\) \#Returns the hash code value for this Vector\.                                                                                                                                          |
+| int               | indexOf\(Object o\) \#Returns the index of the first occurrence of the specified element in this vector, or \-1 if this vector does not contain the element\.                                         |
+| int               | indexOf\(Object o, int index\) \#Returns the index of the first occurrence of the specified element in this vector, searching forwards from index, or returns \-1 if the element is not found\.       |
+| void              | insertElementAt\(E obj, int index\) \#Inserts the specified object as a component in this vector at the specified index\.                                                                             |
+| boolean           | isEmpty\(\) \#Tests if this vector has no components\.                                                                                                                                                |
+| Iterator<E>       | iterator\(\) \#Returns an iterator over the elements in this list in proper sequence\.                                                                                                                |
+| E                 | lastElement\(\) \#Returns the last component of the vector\.                                                                                                                                          |
+| int               | lastIndexOf\(Object o\) \#Returns the index of the last occurrence of the specified element in this vector, or \-1 if this vector does not contain the element\.                                      |
+| int               | lastIndexOf\(Object o, int index\) \#Returns the index of the last occurrence of the specified element in this vector, searching backwards from index, or returns \-1 if the element is not found\.   |
+| ListIterator<E>   | listIterator\(\) \#Returns a list iterator over the elements in this list \(in proper sequence\)\.                                                                                                    |
+| ListIterator<E>   | listIterator\(int index\) \#Returns a list iterator over the elements in this list \(in proper sequence\), starting at the specified position in the list\.                                           |
+| E                 | remove\(int index\) \#Removes the element at the specified position in this Vector\.                                                                                                                  |
+| boolean           | remove\(Object o\) \#Removes the first occurrence of the specified element in this Vector If the Vector does not contain the element, it is unchanged\.                                               |
+| boolean           | removeAll\(Collection<?> c\) \#Removes from this Vector all of its elements that are contained in the specified Collection\.                                                                          |
+| void              | removeAllElements\(\) \#Removes all components from this vector and sets its size to zero\.                                                                                                           |
+| boolean           | removeElement\(Object obj\) \#the first \(lowest\-indexed\) occurrence of the argument from this vector\.                                                                                             |
+| void              | removeElementAt\(int index\) \#Deletes the component at the specified index\.                                                                                                                         |
+| boolean           | removeIf\(Predicate<? super E> filter\) \#all of the elements of this collection that satisfy the given predicate\.                                                                                   |
+| protected void    | removeRange\(int fromIndex, int toIndex\) \#Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive\.                                          |
+| void              | replaceAll\(UnaryOperator<E> operator\) \#Replaces each element of this list with the result of applying the operator to that element\.                                                               |
+| boolean           | retainAll\(Collection<?> c\) \#Retains only the elements in this Vector that are contained in the specified Collection\.                                                                              |
+| E                 | set\(int index, E element\) \#Replaces the element at the specified position in this Vector with the specified element\.                                                                              |
+| void              | setElementAt\(E obj, int index\) \#the component at the specified index of this vector to be the specified object\.                                                                                   |
+| void              | setSize\(int newSize\) \#the size of this vector\.                                                                                                                                                    |
+| int               | size\(\) \#Returns the number of components in this vector\.                                                                                                                                          |
+| void              | sort\(Comparator<? super E> c\) \#Sorts this list according to the order induced by the specified Comparator\.                                                                                        |
+| Spliterator<E>    | spliterator\(\) \#Creates a late\-binding and fail\-fast Spliterator over the elements in this list\.                                                                                                 |
+| List<E>           | subList\(int fromIndex, int toIndex\) \#Returns a view of the portion of this List between fromIndex, inclusive, and toIndex, exclusive\.                                                             |
+| Object\[\]        | toArray\(\) \#Returns an array containing all of the elements in this Vector in the correct order\.                                                                                                   |
+| <T> T\[\]         | toArray\(T\[\] a\) \#Returns an array containing all of the elements in this Vector in the correct order; the runtime type of the returned array is that of the specified array\.                     |
+| String            | toString\(\) \#Returns a string representation of this Vector, containing the String representation of each element\.                                                                                 |
+| void              | trimToSize\(\) \#Trims the capacity of this vector to be the vector's current size\.                                                                                                                  |
+
 ##### [Stack]
 | Modifier and Type | Method and Description |
 |-------------------|-------------------------------------------------------------------------------------------------|
@@ -71,7 +234,49 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 | boolean           | removeAll\(Collection<?> c\) \#Removes from this set all of its elements that are contained in the specified collection \(optional operation\)\. |
 
 #### [HashSet]
+| Modifier and Type | Method and Description                                                                                |
+|-------------------|-------------------------------------------------------------------------------------------------------|
+| boolean           | add\(E e\) \#Adds the specified element to this set if it is not already present\.                    |
+| void              | clear\(\) \#Removes all of the elements from this set\.                                               |
+| Object            | clone\(\) \#Returns a shallow copy of this HashSet instance: the elements themselves are not cloned\. |
+| boolean           | contains\(Object o\) \#Returns true if this set contains the specified element\.                      |
+| boolean           | isEmpty\(\) \#Returns true if this set contains no elements\.                                         |
+| Iterator<E>       | iterator\(\) \#Returns an iterator over the elements in this set\.                                    |
+| boolean           | remove\(Object o\) \#Removes the specified element from this set if it is present\.                   |
+| int               | size\(\) \#Returns the number of elements in this set \(its cardinality\)\.                           |
+| Spliterator<E>    | spliterator\(\) \#Creates a late\-binding and fail\-fast Spliterator over the elements in this set\.  |
+
 #### [TreeSet]
+| Modifier and Type     | Method and Description                                                                                                                                                            |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean               | add\(E e\) \#Adds the specified element to this set if it is not already present\.                                                                                                |
+| boolean               | addAll\(Collection<? extends E> c\) \#Adds all of the elements in the specified collection to this set\.                                                                          |
+| E                     | ceiling\(E e\) \#Returns the least element in this set greater than or equal to the given element, or null if there is no such element\.                                          |
+| void                  | clear\(\) \#Removes all of the elements from this set\.                                                                                                                           |
+| Object                | clone\(\) \#Returns a shallow copy of this TreeSet instance\.                                                                                                                     |
+| Comparator<? super E> | comparator\(\) \#Returns the comparator used to order the elements in this set, or null if this set uses the natural ordering of its elements\.                                   |
+| boolean               | contains\(Object o\) \#Returns true if this set contains the specified element\.                                                                                                  |
+| Iterator<E>           | descendingIterator\(\) \#Returns an iterator over the elements in this set in descending order\.                                                                                  |
+| NavigableSet<E>       | descendingSet\(\) \#Returns a reverse order view of the elements contained in this set\.                                                                                          |
+| E                     | first\(\) \#Returns the first \(lowest\) element currently in this set\.                                                                                                          |
+| E                     | floor\(E e\) \#Returns the greatest element in this set less than or equal to the given element, or null if there is no such element\.                                            |
+| SortedSet<E>          | headSet\(E toElement\) \#Returns a view of the portion of this set whose elements are strictly less than toElement\.                                                              |
+| NavigableSet<E>       | headSet\(E toElement, boolean inclusive\) \#Returns a view of the portion of this set whose elements are less than \(or equal to, if inclusive is true\) toElement\.              |
+| E                     | higher\(E e\) \#Returns the least element in this set strictly greater than the given element, or null if there is no such element\.                                              |
+| boolean               | isEmpty\(\) \#Returns true if this set contains no elements\.                                                                                                                     |
+| Iterator<E>           | iterator\(\) \#Returns an iterator over the elements in this set in ascending order\.                                                                                             |
+| E                     | last\(\) \#Returns the last \(highest\) element currently in this set\.                                                                                                           |
+| E                     | lower\(E e\) \#Returns the greatest element in this set strictly less than the given element, or null if there is no such element\.                                               |
+| E                     | pollFirst\(\) \#Retrieves and removes the first \(lowest\) element, or returns null if this set is empty\.                                                                        |
+| E                     | pollLast\(\) \#Retrieves and removes the last \(highest\) element, or returns null if this set is empty\.                                                                         |
+| boolean               | remove\(Object o\) \#Removes the specified element from this set if it is present\.                                                                                               |
+| int                   | size\(\) \#Returns the number of elements in this set \(its cardinality\)\.                                                                                                       |
+| Spliterator<E>        | spliterator\(\) \#Creates a late\-binding and fail\-fast Spliterator over the elements in this set\.                                                                              |
+| NavigableSet<E>       | subSet\(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive\) \#Returns a view of the portion of this set whose elements range from fromElement to toElement\. |
+| SortedSet<E>          | subSet\(E fromElement, E toElement\) \#Returns a view of the portion of this set whose elements range from fromElement, inclusive, to toElement, exclusive\.                      |
+| SortedSet<E>          | tailSet\(E fromElement\) \#Returns a view of the portion of this set whose elements are greater than or equal to fromElement\.                                                    |
+| NavigableSet<E>       | tailSet\(E fromElement, boolean inclusive\) \#Returns a view of the portion of this set whose elements are greater than \(or equal to, if inclusive is true\) fromElement\.       |
+
 ### [AbstractQueue]
 | Modifier and Type | Method and Description                                                                                                                                                                                                                            |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -82,6 +287,32 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 | E                 | remove\(\) \#Retrieves and removes the head of this queue\.                                                                                                                                                                                       |
 
 #### [PriorityQueue]
+| Constructor and Description                                                                                                                                                                           |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PriorityQueue\(\) \#Creates a PriorityQueue with the default initial capacity \(11\) that orders its elements according to their natural ordering\.                                                   |
+| PriorityQueue\(Collection<? extends E> c\) \#Creates a PriorityQueue containing the elements in the specified collection\.                                                                            |
+| PriorityQueue\(Comparator<? super E> comparator\) \#Creates a PriorityQueue with the default initial capacity and whose elements are ordered according to the specified comparator\.                  |
+| PriorityQueue\(int initialCapacity\) \#Creates a PriorityQueue with the specified initial capacity that orders its elements according to their natural ordering\.                                     |
+| PriorityQueue\(int initialCapacity, Comparator<? super E> comparator\) \#Creates a PriorityQueue with the specified initial capacity that orders its elements according to the specified comparator\. |
+| PriorityQueue\(PriorityQueue<? extends E> c\) \#Creates a PriorityQueue containing the elements in the specified priority queue\.                                                                     |
+| PriorityQueue\(SortedSet<? extends E> c\) \#Creates a PriorityQueue containing the elements in the specified sorted set\.                                                                             |
+
+| Modifier and Type     | Method and Description                                                                                                                                                |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean               | add\(E e\) \#Inserts the specified element into this priority queue\.                                                                                                 |
+| void                  | clear\(\) \#Removes all of the elements from this priority queue\.                                                                                                    |
+| Comparator<? super E> | comparator\(\) \#Returns the comparator used to order the elements in this queue, or null if this queue is sorted according to the natural ordering of its elements\. |
+| boolean               | contains\(Object o\) \#Returns true if this queue contains the specified element\.                                                                                    |
+| Iterator<E>           | iterator\(\) \#Returns an iterator over the elements in this queue\.                                                                                                  |
+| boolean               | offer\(E e\) \#Inserts the specified element into this priority queue\.                                                                                               |
+| E                     | peek\(\) \#Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty\.                                                           |
+| E                     | poll\(\) \#Retrieves and removes the head of this queue, or returns null if this queue is empty\.                                                                     |
+| boolean               | remove\(Object o\) \#Removes a single instance of the specified element from this queue, if it is present\.                                                           |
+| int                   | size\(\) \#Returns the number of elements in this collection\.                                                                                                        |
+| Spliterator<E>        | spliterator\(\) \#Creates a late\-binding and fail\-fast Spliterator over the elements in this queue\.                                                                |
+| Object\[\]            | toArray\(\) \#Returns an array containing all of the elements in this queue\.                                                                                         |
+| <T> T\[\]             | toArray\(T\[\] a\) \#Returns an array containing all of the elements in this queue; the runtime type of the returned array is that of the specified array\.           |
+
 
 ## [AbstractMap]
 | Modifier and Type             | Method and Description                                                                                                            |
@@ -206,6 +437,42 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 | peek\(\)     | peekFirst\(\)           |
 
 ### [ArrayDeque]
+| Modifier and Type | Method and Description                                                                                                                                                                                        |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean           | add\(E e\) \#Inserts the specified element at the end of this deque\.                                                                                                                                         |
+| void              | addFirst\(E e\) \#Inserts the specified element at the front of this deque\.                                                                                                                                  |
+| void              | addLast\(E e\) \#Inserts the specified element at the end of this deque\.                                                                                                                                     |
+| void              | clear\(\) \#Removes all of the elements from this deque\.                                                                                                                                                     |
+| ArrayDeque<E>     | clone\(\) \#Returns a copy of this deque\.                                                                                                                                                                    |
+| boolean           | contains\(Object o\) \#Returns true if this deque contains the specified element\.                                                                                                                            |
+| Iterator<E>       | descendingIterator\(\) \#Returns an iterator over the elements in this deque in reverse sequential order\.                                                                                                    |
+| E                 | element\(\) \#Retrieves, but does not remove, the head of the queue represented by this deque\.                                                                                                               |
+| E                 | getFirst\(\) \#Retrieves, but does not remove, the first element of this deque\.                                                                                                                              |
+| E                 | getLast\(\) \#Retrieves, but does not remove, the last element of this deque\.                                                                                                                                |
+| boolean           | isEmpty\(\) \#Returns true if this deque contains no elements\.                                                                                                                                               |
+| Iterator<E>       | iterator\(\) \#Returns an iterator over the elements in this deque\.                                                                                                                                          |
+| boolean           | offer\(E e\) \#Inserts the specified element at the end of this deque\.                                                                                                                                       |
+| boolean           | offerFirst\(E e\) \#Inserts the specified element at the front of this deque\.                                                                                                                                |
+| boolean           | offerLast\(E e\) \#Inserts the specified element at the end of this deque\.                                                                                                                                   |
+| E                 | peek\(\) \#Retrieves, but does not remove, the head of the queue represented by this deque, or returns null if this deque is empty\.                                                                          |
+| E                 | peekFirst\(\) \#Retrieves, but does not remove, the first element of this deque, or returns null if this deque is empty\.                                                                                     |
+| E                 | peekLast\(\) \#Retrieves, but does not remove, the last element of this deque, or returns null if this deque is empty\.                                                                                       |
+| E                 | poll\(\) \#Retrieves and removes the head of the queue represented by this deque \(in other words, the first element of this deque\), or returns null if this deque is empty\.                                |
+| E                 | pollFirst\(\) \#Retrieves and removes the first element of this deque, or returns null if this deque is empty\.                                                                                               |
+| E                 | pollLast\(\) \#Retrieves and removes the last element of this deque, or returns null if this deque is empty\.                                                                                                 |
+| E                 | pop\(\) \#Pops an element from the stack represented by this deque\.                                                                                                                                          |
+| void              | push\(E e\) \#Pushes an element onto the stack represented by this deque\.                                                                                                                                    |
+| E                 | remove\(\) \#Retrieves and removes the head of the queue represented by this deque\.                                                                                                                          |
+| boolean           | remove\(Object o\) \#Removes a single instance of the specified element from this deque\.                                                                                                                     |
+| E                 | removeFirst\(\) \#Retrieves and removes the first element of this deque\.                                                                                                                                     |
+| boolean           | removeFirstOccurrence\(Object o\) \#Removes the first occurrence of the specified element in this deque \(when traversing the deque from head to tail\)\.                                                     |
+| E                 | removeLast\(\) \#Retrieves and removes the last element of this deque\.                                                                                                                                       |
+| boolean           | removeLastOccurrence\(Object o\) \#Removes the last occurrence of the specified element in this deque \(when traversing the deque from head to tail\)\.                                                       |
+| int               | size\(\) \#Returns the number of elements in this deque\.                                                                                                                                                     |
+| Spliterator<E>    | spliterator\(\) \#Creates a late\-binding and fail\-fast Spliterator over the elements in this deque\.                                                                                                        |
+| Object\[\]        | toArray\(\) \#Returns an array containing all of the elements in this deque in proper sequence \(from first to last element\)\.                                                                               |
+| <T> T\[\]         | toArray\(T\[\] a\) \#Returns an array containing all of the elements in this deque in proper sequence \(from first to last element\); the runtime type of the returned array is that of the specified array\. |
+
 
 
 [object]:https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
