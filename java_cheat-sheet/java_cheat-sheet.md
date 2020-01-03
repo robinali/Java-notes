@@ -13,7 +13,7 @@
 ##### [TreeSet](#TreeSet)
 #### [AbstractQueue](#AbstractQueue)
 ##### [PriorityQueue](#PriorityQueue)
-### AbstractMap](#AbstractMap)
+### [AbstractMap](#AbstractMap)
 #### [HashMap](#HashMap)
 #### [TreehMap](#TreehMap)
 ### [Deque](#Deque)
