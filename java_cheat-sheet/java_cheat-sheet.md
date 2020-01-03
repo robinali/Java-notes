@@ -51,6 +51,7 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 
 ## [Deque]
 * Summary of Deque methods
+
 |         | First Element \(Head\) |                 |Last Element \(Tail\) |                |
 |---------|------------------------|-----------------|----------------------|----------------|
 |         | Throws exception       | Special value   | Throws exception     | Special value  |
@@ -59,6 +60,7 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 | Examine | getFirst\(\)           | peekFirst\(\)   | getLast\(\)          | peekLast\(\)   |
 
 * Comparison of Queue and Deque methods
+
 | Queue Method | Equivalent Deque Method |
 |--------------|-------------------------|
 | add\(e\)     | addLast\(e\)            |
@@ -69,6 +71,7 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 | peek\(\)     | peekFirst\(\)           |
 
 * Comparison of Stack and Deque methods
+
 | Stack Method | Equivalent Deque Method |
 |--------------|-------------------------|
 | push\(e\)    | addFirst\(e\)           |
