@@ -50,6 +50,13 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 ### [TreeMap]
 
 ## [Deque]
+|         | First Element \(Head\) |               |Last Element \(Tail\) |                |
+|---------|------------------------|---------------|----------------------|----------------|
+|         | Throws exception       | Special value | Throws exception     | Special value  |
+| Insert  | addFirst\(e\)          |               | addLast\(e\)         | offerLast\(e\) |
+| Remove  | removeFirst\(\)        | pollFirst\(\) | removeLast\(\)       | pollLast\(\)   |
+| Examine | getFirst\(\)           | peekFirst\(\) | getLast\(\)          | peekLast\(\)   |
+
 ### [ArrayDeque]
 
 
