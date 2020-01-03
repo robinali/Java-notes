@@ -27,6 +27,25 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 # Java ADT
 ## [AbstractCollection]
 ### [AbstractList]
+| Modifier and Type | Method and Description                                                                                                                                                     |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean           | add\(E e\) \#Appends the specified element to the end of this list \(optional operation\)\.                                                                                |
+| void              | add\(int index, E element\) \#Inserts the specified element at the specified position in this list \(optional operation\)\.                                                |
+| boolean           | addAll\(int index, Collection<? extends E> c\) \#Inserts all of the elements in the specified collection into this list at the specified position \(optional operation\)\. |
+| void              | clear\(\) \#Removes all of the elements from this list \(optional operation\)\.                                                                                            |
+| boolean           | equals\(Object o\) \#Compares the specified object with this list for equality\.                                                                                           |
+| abstract E        | get\(int index\) \#Returns the element at the specified position in this list\.                                                                                            |
+| int               | hashCode\(\) \#Returns the hash code value for this list\.                                                                                                                 |
+| int               | indexOf\(Object o\) \#Returns the index of the first occurrence of the specified element in this list, or \-1 if this list does not contain the element\.                  |
+| Iterator<E>       | iterator\(\) \#Returns an iterator over the elements in this list in proper sequence\.                                                                                     |
+| int               | lastIndexOf\(Object o\) \#Returns the index of the last occurrence of the specified element in this list, or \-1 if this list does not contain the element\.               |
+| ListIterator<E>   | listIterator\(\) \#Returns a list iterator over the elements in this list \(in proper sequence\)\.                                                                         |
+| ListIterator<E>   | listIterator\(int index\) \#Returns a list iterator over the elements in this list \(in proper sequence\), starting at the specified position in the list\.                |
+| E                 | remove\(int index\) \#Removes the element at the specified position in this list \(optional operation\)\.                                                                  |
+| protected void    | removeRange\(int fromIndex, int toIndex\) \#Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive\.               |
+| E                 | set\(int index, E element\) \#Replaces the element at the specified position in this list with the specified element \(optional operation\)\.                              |
+| List<E>           | subList\(int fromIndex, int toIndex\) \#Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive\.                    |
+
 #### [ArrayList]
 #### [LinkedList]
 #### [Vector]
@@ -40,9 +59,23 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 | int	      | search(Object o) #Returns the 1-based position where an object is on this stack.|
 
 ### [AbstractSet]
+| Modifier and Type | Method and Description                                                                                                                           |
+|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean           | equals\(Object o\) \#Compares the specified object with this set for equality\.                                                                  |
+| int               | hashCode\(\) \#Returns the hash code value for this set\.                                                                                        |
+| boolean           | removeAll\(Collection<?> c\) \#Removes from this set all of its elements that are contained in the specified collection \(optional operation\)\. |
+
 #### [HashSet]
 #### [TreeSet]
 ### [AbstractQueue]
+| Modifier and Type | Method and Description                                                                                                                                                                                                                            |
+|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| boolean           | add\(E e\) \#Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions, returning true upon success and throwing an IllegalStateException if no space is currently available\. |
+| boolean           | addAll\(Collection<? extends E> c\) \#Adds all of the elements in the specified collection to this queue\.                                                                                                                                        |
+| void              | clear\(\) \#Removes all of the elements from this queue\.                                                                                                                                                                                         |
+| E                 | element\(\) \#Retrieves, but does not remove, the head of this queue\.                                                                                                                                                                            |
+| E                 | remove\(\) \#Retrieves and removes the head of this queue\.                                                                                                                                                                                       |
+
 #### [PriorityQueue]
 
 ## [AbstractMap]
