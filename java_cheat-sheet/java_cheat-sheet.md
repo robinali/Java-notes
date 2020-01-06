@@ -2,6 +2,7 @@
 **[java class hierarchy](#java-class-hierarchy)**<br>
 **[Binary Literals](#Binary-Literals)**<br>
 **[String](#String)**<br>
+**[Arrays](#Arrays)**<br>
 
 **[Java ADT](#Java-ADT)**<br>
 	**[AbstractCollection](#AbstractCollection)**<br>
@@ -57,6 +58,26 @@ split(String regex)
 startsWith(String prefix)
 subSequence(int beginIndex, int endIndex)
 substring(int beginIndex, int endIndex)
+```
+
+## [Arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+```java
+int[] anArray = { 
+    100, 200, 300,
+    400, 500, 600, 
+    700, 800, 900, 1000
+};
+String[][] names = {
+            {"Mr. ", "Mrs. ", "Ms. "},
+            {"Smith", "Jones"}
+        };
+
+char[] copyFrom = {'d', 'e', 'c', 'a', 'f', 'f', 'e',
+            'i', 'n', 'a', 't', 'e', 'd'};
+char[] copyTo = java.util.Arrays.copyOfRange(copyFrom, 2, 9);
+
+List<Integer> list = Arrays.asList{100, 200, 300 400, 500, 600};
+List<int[]> directions = Arrays.asList(new int[] {0,1}, new int[] {0, -1}, new int[] {1, 0}, new int[] {-1, 0}); 
 ```
 
 # Java ADT
