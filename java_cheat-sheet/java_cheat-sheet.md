@@ -54,11 +54,12 @@ toCharArray()
 indexOf()
 lastIndexOf()
 length()
-split(String [regex](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum))
+split(String regex)
 startsWith(String prefix)
 subSequence(int beginIndex, int endIndex)
 substring(int beginIndex, int endIndex)
 ```
+[regex](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)
 
 ## [Arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 ```java
