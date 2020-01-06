@@ -1,6 +1,7 @@
 # Table of Contents
 **[java class hierarchy](#java-class-hierarchy)**<br>
 **[Binary Literals](#Binary-Literals)**<br>
+**[String](#String)**<br>
 
 **[Java ADT](#Java-ADT)**<br>
 	**[AbstractCollection](#AbstractCollection)**<br>
@@ -45,6 +46,16 @@ int anInt3 = 0B101; // The B can be upper or lower case.
 // A 64-bit 'long' value. Note the "L" suffix:
 long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L;
 ```
+
+## [String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+⋅⋅*toCharArray()
+⋅⋅*indexOf()
+⋅⋅*lastIndexOf()
+⋅⋅*length()
+⋅⋅*split(String regex)
+⋅⋅*startsWith(String prefix)
+⋅⋅*subSequence(int beginIndex, int endIndex)
+⋅⋅*substring(int beginIndex, int endIndex)
 
 # Java ADT
 ## [AbstractCollection]
