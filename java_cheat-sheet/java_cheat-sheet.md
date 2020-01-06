@@ -48,7 +48,7 @@ long aLong = 0b1010000101000101101000010100010110100001010001011010000101000101L
 ```
 
 ## [String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-```java```java
+```java
 toCharArray()
 indexOf()
 lastIndexOf()
