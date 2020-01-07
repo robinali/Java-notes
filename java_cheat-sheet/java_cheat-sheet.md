@@ -323,6 +323,38 @@ List<int[]> directions = Arrays.asList(new int[] {0,1}, new int[] {0, -1}, new i
 | E                 | remove\(\) \#Retrieves and removes the head of this queue\.                                                                                                                                                                                       |
 
 #### [PriorityQueue]
+
+
+## [PriorityQueue]
+```java
+    PriorityQueue<List<Integer>> pq = new PriorityQueue<>(); // Min heap
+    pq.add(1);
+    pq.offer(2);
+    pq.peek();
+    pq.size();
+    pq.keySet();
+    pq.toArray();
+    
+    PriorityQueue<Long> smallQueue = new PriorityQueue<>(); // Min heap, Smallest item on top
+    PriorityQueue<Long> largeQueue = new PriorityQueue<>(Collections.reverseOrder()); // Max heap, Largest item on top
+    
+    PriorityQueue<int[]> pq = new PriorityQueue<>(k, (int[] l1, int[] l2) -> l1[0] -l2[0]);
+    int[] list = new int[]{0, 1};
+    if(!pq.isEmpty() && pq.comparator().compare(list, pq.peek()) > 0) {
+    	pq.remove();
+    	pq.add(list);
+    } else{
+    	pq.add(list);
+    }
+    
+    PriorityQueue<List<Integer>> pq = new PriorityQueue<>(k, (List<Integer> l1, List<Integer>l2) -> l1.get(0).compareTo(l2.get(0)));
+    List<Integer> list = new ArrayList<>(Arrays.asList(0,1));
+    pq.add(list);
+    if(pq.comparator().compare(list, pq.peek()) > 0 ){ // Add if new begining larger than current one
+    	pq.remove();
+    	pq.add(list);
+    }
+```
 | Constructor and Description                                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | PriorityQueue\(\) \#Creates a PriorityQueue with the default initial capacity \(11\) that orders its elements according to their natural ordering\.                                                   |
