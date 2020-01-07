@@ -327,7 +327,7 @@ List<int[]> directions = Arrays.asList(new int[] {0,1}, new int[] {0, -1}, new i
 
 ## [PriorityQueue]
 ```java
-    PriorityQueue<List<Integer>> pq = new PriorityQueue<>(); // Min heap
+    PriorityQueue<Integer> pq = new PriorityQueue<>(); // Min heap
     pq.add(1);
     pq.offer(2);
     pq.peek();
