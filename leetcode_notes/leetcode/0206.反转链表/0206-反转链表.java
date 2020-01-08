@@ -7,17 +7,17 @@
  * }
  */
 class Solution {
-    // 206
-    // Reference: cspiration
     public ListNode reverseList(ListNode head) {
-        // Time: O(n) Space: O(1)
-        if(head == null || head.next == null) return head;
+        //     head -> next -> next.next
+        // pre cur
+        //             next
         ListNode pre = null;
-        while(head != null) {
-            ListNode temp = head.next;
-            head.next = pre;
-            pre = head;
-            head = temp;
+        ListNode cur = head;
+        while(cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
         return pre;
     }
