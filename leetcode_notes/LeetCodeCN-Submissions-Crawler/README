@@ -10,3 +10,8 @@ python3 main.py
 按需修改main.py中的参数： 
 START_PAGE = 0  # 从哪一页submission开始爬起，0是最新的一页
 sleep_time = 5  # in second，登录失败时的休眠时间
+
+按需使用ProblemListGenerator.py生成并更新ProblemList.py中的问题集
+1. 更新1.txt中题目列表
+2. 运行： python3 ProblemListGenerator.py
+3. 更新： ProblemList.py中的mapping = {}
