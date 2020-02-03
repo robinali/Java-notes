@@ -1,16 +1,15 @@
 class Solution {
-    public int myAtoi(String str) {        
+    public int myAtoi(String str) {
         str = str.trim();
+        
         if(str == null || str.length() == 0) return 0;
         
-        char firstChar = str.charAt(0);
         int sign = 1;
         int start = 0;
         long res = 0;
-        if(firstChar == '+') {
-            sign = 1;
+        if (str.charAt(0) == '+') {
             start++;
-        } else if(firstChar == '-') {
+        } else if(str.charAt(0) == '-') {
             sign = -1;
             start++;
         }
@@ -20,8 +19,8 @@ class Solution {
                 return (int) res * sign;
             }
             res = res * 10 + str.charAt(i) - '0';
-            if(sign == 1 && res > Integer.MAX_VALUE) return Integer.MAX_VALUE;
-            if(sign == -1 && res > Integer.MAX_VALUE) return Integer.MIN_VALUE;
+            if(sign * res > Integer.MAX_VALUE) return Integer.MAX_VALUE;
+            if(sign * res < Integer.MIN_VALUE) return Integer.MIN_VALUE;
         }
         return sign * (int) res;
     }

@@ -10,10 +10,7 @@
  * }
  */
 public class Solution {
-    // 141
-    // Reference: cspiration
     public boolean hasCycle(ListNode head) {
-        // Time: O(n) Sapce: O(1)
         if(head == null || head.next == null) return false;
         
         ListNode slow = head;

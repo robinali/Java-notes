@@ -7,19 +7,16 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
-    // 106
-    // Reference: cspiration
-    
-    int pInorder;
-    int pPostorder;
-    public TreeNode buildTree(int[] inorder, int[] postorder) {
-        // Time: O(n) Space: O(n)
+class Solution{
+	int pInorder;
+	int pPostorder;
+	public TreeNode buildTree(int[] inorder, int[] postorder) {
         pInorder = inorder.length - 1;
         pPostorder = postorder.length - 1;
         return buildTree(inorder, postorder, null);
     }
-    private TreeNode buildTree(int[] inorder, int[] postorder, TreeNode end) {
+
+    private TreeNode buildTree(int[] inorder, int[] postorder, TreeNode end){
         if(pPostorder < 0) {
             return null;
         }
@@ -34,3 +31,4 @@ class Solution {
         return root;
     }
 }
+

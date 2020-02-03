@@ -8,18 +8,21 @@
  * }
  */
 class Solution {
-    // 101
-    // Reference: cspiration
     public boolean isSymmetric(TreeNode root) {
-        // Time: O(n) Space: O(n)
-        if(root == null) return true;
-        return isSymmetric(root.left, root.right);
-    }
-    
-    private boolean isSymmetric(TreeNode p, TreeNode q) {
-        if(p == null && q == null) return true;
-        if(p == null || q == null) return false;
-        if(p.val != q.val) return false;
-        return isSymmetric(p.left, q.right) && isSymmetric(p.right, q.left);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            TreeNode l = queue.poll();
+            TreeNode r = queue.poll();
+            if(l == null && r == null) continue;
+            if(l == null || r == null) return false;
+            if(l.val != r.val) return false;
+            queue.add(l.left);
+            queue.add(r.right);
+            queue.add(l.right);
+            queue.add(r.left);
+        }
+        return true;
     }
 }

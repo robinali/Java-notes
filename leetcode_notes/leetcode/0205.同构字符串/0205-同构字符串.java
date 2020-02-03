@@ -1,11 +1,7 @@
 class Solution {
-    // 205
-    // Reference: cspiration
     public boolean isIsomorphic(String s, String t) {
-        // Time: O(n) Space: O(1)
         int[] sChars = new int[256];
         int[] tChars = new int[256];
-        
         for(int i = 0; i < s.length(); i++) {
             if(sChars[s.charAt(i)] != tChars[t.charAt(i)]) {
                 return false;

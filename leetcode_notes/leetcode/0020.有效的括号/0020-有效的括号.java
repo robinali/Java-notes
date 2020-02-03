@@ -1,19 +1,18 @@
 class Solution {
     public boolean isValid(String s) {
-        if (s == null || s.length() == 0 ) return true;
-        ArrayDeque<Character> stack = new ArrayDeque<>();
+        if (s == null || s.length() == 0) return true;
+        Deque<Character> stack = new ArrayDeque<>();
+        Map<Character, Character> hm = new HashMap<Character, Character>() {{
+            put(')', '(');
+            put('}', '{');
+            put(']', '[');
+        }};
+    
         for(Character ch : s.toCharArray()) {
-            if(ch == '('){
-                stack.push(')');
-            } else if(ch == '[') {
-                stack.push(']');
-            } else if (ch == '{') {
-                stack.push('}');
-            } else {
-                if(stack.isEmpty() || stack.pop() != ch) {
-                    return false;
-                }
-            }
+            if(hm.get(ch) == null)
+                stack.push(ch);
+            else if(stack.isEmpty() || hm.get(ch) != stack.pop())
+                return false;
         }
         return stack.isEmpty();
     }

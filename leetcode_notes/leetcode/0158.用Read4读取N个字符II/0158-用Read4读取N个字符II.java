@@ -3,8 +3,6 @@
  *     int read4(char[] buf); 
  */
 public class Solution extends Reader4 {
-    // 158
-    // Reference: cspiration
     /**
      * @param buf Destination buffer
      * @param n   Number of characters to read
@@ -16,10 +14,9 @@ public class Solution extends Reader4 {
     private char[] temp = new char[4];
     
     public int read(char[] buf, int n) {
-        // Time: O(n) Space: O(1)
         int index = 0;
-        while(index < n) {
-            if(pointer == 0){
+        while(index < n){
+            if(pointer == 0) {
                 count = read4(temp);
             }
             if(count == 0) break;

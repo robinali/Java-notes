@@ -1,14 +1,12 @@
 class Solution {
-    // 65
-    // Reference: cspiration
     public boolean isNumber(String s) {
-        // Time: O(n) Space: O(1)
         s = s.trim();
         boolean numberSeen = false;
         boolean pointSeen = false;
         boolean eSeen = false;
         boolean numberAfterE = true;
-        for( int i = 0; i < s.length(); i++) {
+        
+        for(int i = 0; i < s.length(); i++) {
             if(s.charAt(i) >= '0' && s.charAt(i) <= '9') {
                 numberSeen = true;
                 numberAfterE = true;
@@ -23,7 +21,7 @@ class Solution {
                 }
                 eSeen = true;
                 numberAfterE = false;
-            } else if(s.charAt(i) == '+' || s.charAt(i) == '-')  {
+            } else if(s.charAt(i) == '+' || s.charAt(i) == '-') {
                 if(i != 0 && s.charAt(i - 1) != 'e') {
                     return false;
                 }

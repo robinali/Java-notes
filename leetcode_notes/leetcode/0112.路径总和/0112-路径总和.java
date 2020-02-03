@@ -9,24 +9,26 @@
  */
 class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {
-        if (root == null) return false;
+        if(root == null) return false;
         
-        ArrayDeque<TreeNode> st = new ArrayDeque<>();
-        st.push(root);
+        Deque<TreeNode> node_stack = new ArrayDeque<>();
+        Deque<Integer> sum_stack = new ArrayDeque<>();
+        node_stack.push(root);
+        sum_stack.push(sum - root.val);
         
-        while(!st.isEmpty()) {
-            TreeNode t = st.pop();
-            
-            if(t.left == null && t.right == null) {
-                if(t.val == sum) return true;
+        while(!node_stack.isEmpty()) {
+            TreeNode node = node_stack.pop();
+            int cur_sum = sum_stack.pop();
+            if(node.left == null && node.right == null) {
+                if(cur_sum == 0) return true;
             }
-            if(t.right != null) {
-                t.right.val += t.val;
-                st.push(t.right);
+            if(node.right != null) {
+                node_stack.push(node.right);
+                sum_stack.push(cur_sum - node.right.val);
             }
-            if(t.left != null) {
-                t.left.val += t.val;
-                st.push(t.left);
+            if(node.left != null) {
+                node_stack.push(node.left);
+                sum_stack.push(cur_sum - node.left.val);
             }
         }
         return false;

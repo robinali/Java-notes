@@ -1,15 +1,12 @@
 class Solution {
-    // 189
-    // Reference: cspiration
     public void rotate(int[] nums, int k) {
-        // Time: O(n) Space: O(1)
         k %= nums.length;
-        reverse(nums, 0, nums.length - 1);
-        reverse(nums, 0, k - 1);
-        reverse(nums, k, nums.length - 1);
+        rotate(nums, 0, nums.length - 1);
+        rotate(nums, 0, k - 1);
+        rotate(nums, k, nums.length -1);
     }
     
-    public void reverse(int[] nums, int start, int end) {
+    private void rotate(int[] nums, int start, int end) {
         while(start < end) {
             int temp = nums[start];
             nums[start] = nums[end];

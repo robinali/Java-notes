@@ -2,6 +2,13 @@ class Solution {
     // 200
     // Reference: Huahua
     // DFS
+
+    private final List<int[]> DIRECTIONS = Arrays.asList(
+    new int[] {0, 1},
+    new int[] {0, -1},
+    new int[] {1, 0},
+    new int[] {-1, 0});
+    
     public int numIslands(char[][] grid) {
         // Time: O(mn) Space: O(mn)
         int m = grid.length;
@@ -26,9 +33,9 @@ class Solution {
             return;
         }
         grid[y][x] = '0';
-        dfs(grid, x + 1, y, n, m);
-        dfs(grid, x - 1, y, n, m);
-        dfs(grid, x, y + 1, n, m);
-        dfs(grid, x, y - 1, n, m);
+        
+        for(int[] direction : DIRECTIONS) {
+            dfs(grid, x + direction[0], y + direction[1], n, m);
+        }
     }
 }

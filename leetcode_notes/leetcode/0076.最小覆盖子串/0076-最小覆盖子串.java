@@ -1,15 +1,7 @@
 class Solution {
-    // 76
-    // Reference: cspiration
     public String minWindow(String s, String t) {
-        // Time: O(n) Space: O(1)
-        /*
-               A B C D E F G H     O
-        count: 0 0 0 -1 -1         -1
-               0 1 2 3 4 5 6 7 ...
-        */
         int[] cnt = new int[128];
-        for(char c: t.toCharArray()) {
+        for(char c : t.toCharArray()) {
             cnt[c]++;
         }
         int from = 0;
@@ -25,6 +17,6 @@ class Solution {
                 if(++cnt[s.charAt(j++)] > 0) total++;
             }
         }
-        return (min == Integer.MAX_VALUE) ? "": s.substring(from, from + min);
+        return (min == Integer.MAX_VALUE) ? "" : s.substring(from, from + min);
     }
 }

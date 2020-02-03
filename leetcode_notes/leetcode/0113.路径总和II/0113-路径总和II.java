@@ -8,26 +8,21 @@
  * }
  */
 class Solution {
-    // 113
-    // Reference: cspiration
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        // Time: O(n) Space: O(n)
         List<List<Integer>> res = new ArrayList<>();
         if(root == null) return res;
-        pathSum(res, new ArrayList<>(), root, sum);
+        pathSum(root, sum, new ArrayList<>(), res);
         return res;
     }
     
-    private void pathSum(List<List<Integer>> res, List<Integer> list, TreeNode root, int sum) {
-        if(root == null) return;
-        list.add(root.val);
-        if(root.left == null && root.right == null) {
-            if(sum == root.val) {
-                res.add(new ArrayList<>(list));
-            }
+    private void pathSum(TreeNode node, int sum, List<Integer> out, List<List<Integer>> res) {
+        if(node == null) return;
+        out.add(node.val);
+        if(sum == node.val && node.left == null && node.right == null) {
+            res.add(new ArrayList<>(out));
         }
-        pathSum(res, list, root.left, sum - root.val);
-        pathSum(res, list, root.right, sum - root.val);
-        list.remove(list.size() - 1);
+        pathSum(node.left, sum - node.val, out, res);
+        pathSum(node.right, sum - node.val, out, res);
+        out.remove(out.size() -1);
     }
 }

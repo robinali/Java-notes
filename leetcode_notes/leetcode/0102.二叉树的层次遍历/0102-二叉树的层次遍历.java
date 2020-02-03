@@ -8,21 +8,22 @@
  * }
  */
 class Solution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        // Time: O(n) Space: O(n)
-        List<List<Integer>> res = new ArrayList<>();
-        if(root == null) return res;
-        getLevels(res, root, 0);
-        return res;
-    }
+    List<List<Integer>> levels = new ArrayList<>();
     
-    private void getLevels(List<List<Integer>> res, TreeNode root, int level) {
-        if(root == null) return;
-        if(level >= res.size()) {
-            res.add(new ArrayList<>());
-        }
-        res.get(level).add(root.val);
-        getLevels(res, root.left, level + 1);
-        getLevels(res, root.right, level + 1);
+    private void levelOrder(TreeNode node, int level){
+        if(levels.size() == level)
+            levels.add(new ArrayList<Integer>());
+        
+        levels.get(level).add(node.val);
+        
+        if(node.left != null)
+            levelOrder(node.left, level + 1);
+        if(node.right != null)
+            levelOrder(node.right, level + 1);
+    }
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        if(root == null) return levels;
+        levelOrder(root, 0);
+        return levels;
     }
 }

@@ -1,8 +1,5 @@
 class Solution {
-    // 151
-    // Reference: cspiration
     public String reverseWords(String s) {
-        // Time: O(n) Space: O(n)
         if(s == null || s.length() == 0) return s;
         char[] ch = s.toCharArray();
         reverse(ch, 0, s.length() - 1);
@@ -18,19 +15,17 @@ class Solution {
         }
     }
     
-    private void reverseWord(char[] ch, int len){
-        int i = 0;
-        int j = 0;
-        while(i <len) {
-            while(i < j || i <len && ch[i] == ' ') i++;
+    private void reverseWord(char[] ch, int len) {
+        int i = 0, j = 0;
+        while( i < len) {
+            while(i < j || i < len && ch[i] == ' ') i++;
             while(j < i || j < len && ch[j] != ' ') j++;
             reverse(ch, i, j - 1);
         }
     }
     
     private String cleanSpaces(char[] ch, int len) {
-        int i = 0;
-        int j = 0;
+        int i = 0, j = 0;
         while(j < len) {
             while(j < len && ch[j] == ' ') j++;
             while(j < len && ch[j] != ' ') ch[i++] = ch[j++];

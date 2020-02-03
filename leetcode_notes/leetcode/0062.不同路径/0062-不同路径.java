@@ -1,8 +1,5 @@
 class Solution {
-    // 62
-    // Reference: cspiration
     public int uniquePaths(int m, int n) {
-        // Time: O(n * m) Space: O(n)
         int[] res = new int[n];
         res[0] = 1;
         for(int i = 0; i < m; i++) {

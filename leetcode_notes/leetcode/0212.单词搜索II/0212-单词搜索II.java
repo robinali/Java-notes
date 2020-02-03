@@ -1,6 +1,9 @@
 class Solution {
     // 212
     // Reference: cspiration
+    
+    private int[][] DIRECTIONS = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+    
     public List<String> findWords(char[][] board, String[] words) {
         // Time: O(m * n * TrieNode) Space: TrieNode
         List<String> res = new ArrayList<>();
@@ -23,10 +26,10 @@ class Solution {
             p.word = null;
         }
         board[i][j] = '#';
-        dfs(board, i - 1, j, p, res);
-        dfs(board, i + 1, j, p, res);
-        dfs(board, i, j - 1, p, res);
-        dfs(board, i, j + 1, p, res);
+        dfs(board, i + DIRECTIONS[0][0], j + DIRECTIONS[0][1], p, res);
+        dfs(board, i + DIRECTIONS[1][0], j + DIRECTIONS[1][1], p, res);
+        dfs(board, i + DIRECTIONS[2][0], j + DIRECTIONS[2][1], p, res);
+        dfs(board, i + DIRECTIONS[3][0], j + DIRECTIONS[3][1], p, res);
         board[i][j] = c;
     }
     

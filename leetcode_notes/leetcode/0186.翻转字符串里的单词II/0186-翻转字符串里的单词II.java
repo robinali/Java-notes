@@ -1,8 +1,5 @@
 class Solution {
-    // 186
-    // Reference: cspiration
     public void reverseWords(char[] s) {
-        // Time: O(n) Space: O(1)
         reverse(s, 0, s.length - 1);
         int r = 0;
         while(r < s.length) {
@@ -10,7 +7,7 @@ class Solution {
             while(r < s.length && s[r] != ' ') {
                 r++;
             }
-            reverse(s, l, r - 1);
+            reverse(s, l, r -1);
             r++;
         }
     }

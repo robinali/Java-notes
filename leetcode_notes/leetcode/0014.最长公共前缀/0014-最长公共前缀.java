@@ -1,8 +1,6 @@
 class Solution {
     public String longestCommonPrefix(String[] strs) {
-        // Time O(n) Space O(1)
-        
-        if(strs == null || strs.length == 0) return "";
+        if(strs == null || strs.length == 0 || strs[0].length() == 0) return "";
         String res = strs[0];
         for(int i = 1; i < strs.length; i++) {
             while(strs[i].indexOf(res) != 0) {

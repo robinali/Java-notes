@@ -1,6 +1,4 @@
 class Solution {
-    // 123
-    // Reference: cspirtion
     public int maxProfit(int[] prices) {
         int buy1 = Integer.MIN_VALUE, buy2 = Integer.MIN_VALUE;
         int sell1 = 0, sell2 = 0;

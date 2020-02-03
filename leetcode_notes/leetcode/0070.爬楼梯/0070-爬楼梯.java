@@ -1,15 +1,15 @@
 class Solution {
-    // 70
-    // Reference: cspiration
     public int climbStairs(int n) {
-        // Time: O(n) Space: O(n)
-        if(n <= 1) return 1;
-        int[] mem = new int[n + 1];
-        mem[0] = 1;
-        mem[1] = 1;
-        for(int i = 2; i <= n; i++) {
-            mem[i] = mem[i - 1] + mem[i - 2];
+        if(n < 0) return 0;
+        if(n == 1) return 1;
+        
+        int[] cache = new int[n];
+        cache[0] = 1;
+        cache[1] = 2;
+        for(int i = 2; i < n; i++) {
+            cache[i] = cache[i - 1] + cache[i - 2];
         }
-        return mem[n];
+        
+        return cache[n - 1];
     }
 }

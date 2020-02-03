@@ -1,9 +1,6 @@
 class Solution {
-    // 87
-    // Reference: cspiration
     public boolean isScramble(String s1, String s2) {
-        // Time O(n!) Space O(n)
-        if(s1 == null || s2 == null) return false;
+        if (s1 == null || s2 == null) return false;
         if(s1.equals(s2)) return true;
         
         int[] letters = new int[26];

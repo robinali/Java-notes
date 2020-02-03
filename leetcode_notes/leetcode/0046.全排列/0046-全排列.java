@@ -1,31 +1,23 @@
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        // time: O(n!) space O(n)
-        List<List<Integer>> res = new ArrayList<>();
-        if(nums == null || nums.length == 0) return res;
-        exchangeStart(res, 0, nums);
-        return res;
+        List<List<Integer>> rtn = new LinkedList<>();
+        int[] visited = new int[nums.length];
+        backtrack(rtn, nums, new LinkedList<Integer>(), visited);
+        return rtn;
     }
-    
-    private void exchangeStart(List<List<Integer>> res, int start, int[] nums) {
-        if(start == nums.length) {
-            List<Integer> list = new ArrayList<>();
-            for (int num : nums) {
-                list.add(num);
-            }
-            res.add(new ArrayList<>(list));
+
+    private void backtrack(List<List<Integer>> rtn, int[] nums, LinkedList<Integer> tmp, int[] visited) {
+        if(tmp.size() == nums.length) {
+            rtn.add(new LinkedList<>(tmp));
             return;
         }
-        for(int i = start; i < nums.length ; i++) {
-            swap(nums, start, i);
-            exchangeStart(res, start + 1, nums);
-            swap(nums, start, i);
+        for(int i = 0; i < nums.length; i++) {
+            if(visited[i] == 1) continue;
+            visited[i] = 1;
+            tmp.addLast(nums[i]);
+            backtrack(rtn, nums, tmp, visited);
+            visited[i] = 0;
+            tmp.removeLast();
         }
-    }
-    
-    private void swap(int[] nums, int l, int r){
-        int temp = nums[l];
-        nums[l] = nums[r];
-        nums[r] = temp;
     }
 }

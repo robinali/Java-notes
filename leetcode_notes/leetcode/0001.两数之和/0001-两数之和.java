@@ -1,21 +1,15 @@
 class Solution {
-    // Not same element twice
-    // Use HashMap to cache nums as key and index as value
+    // Create a hashmap to store the pair key = target-value, value = index
     public int[] twoSum(int[] nums, int target) {
-        if(nums == null || nums.length  < 2) {
-            return new int[]{-1, -1};
-        }
-        
-        int[] res = new int[]{-1, -1};
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < nums.length; i++) {
-            if(map.containsKey(target - nums[i])) {
-                res[0] = map.get(target - nums[i]);
-                res[1] = i;
-                break;
-            }
-            map.put(nums[i], i);
+            map.put(target-nums[i], i);
         }
-        return res;
+        for(int i = 0; i < nums.length; i++){
+            if(map.containsKey(nums[i]) && map.get(nums[i]) != i) {
+                return new int[] {i, map.get(nums[i])};
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");
     }
 }

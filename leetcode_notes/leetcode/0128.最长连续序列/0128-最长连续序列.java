@@ -1,10 +1,7 @@
 class Solution {
-    // 128
-    // Reference: cspiration
     public int longestConsecutive(int[] nums) {
-        // Time O(n) Space O(n)
         if(nums == null || nums.length == 0) return 0;
-        HashSet<Integer> set = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
         int res = 0;
         for(int num : nums) {
             set.add(num);

@@ -1,15 +1,16 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
-        // two pointers
-        // Time O(n) Space O(1)
         if(nums == null || nums.length == 0) return 0;
-        
-        int res = 0;
-        for(int i = 0; i < nums.length; i++) {
-            if(nums[i] != val){
-                nums[res++] = nums[i];
+        int i = 0;
+        int n = nums.length;
+        while(i < n) {
+            if(nums[i] == val) {
+                nums[i] = nums[n - 1];
+                n--;
+            } else {
+                i++;
             }
         }
-        return res;
+        return n;
     }
 }

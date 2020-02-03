@@ -6,18 +6,14 @@ class Solution {
         while(start + 1 < end) {
             int mid = (end - start) / 2 + start;
             if(nums[mid] == target) return mid;
-            if(nums[start] < nums[mid]) {
+            else if (nums[start] < nums[mid]) {
                 if(nums[start] <= target && target <= nums[mid]) {
                     end = mid;
-                } else{
-                    start = mid;
-                }
+                } else start = mid;
             } else {
                 if(nums[mid] <= target && target <= nums[end]) {
                     start = mid;
-                } else {
-                    end = mid;
-                }
+                } else end = mid;
             }
         }
         if(nums[start] == target) return start;
