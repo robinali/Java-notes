@@ -5,12 +5,8 @@ All rights reserved for the original designer.
 请使用相同目录下的config.json设置 用户名，密码，本地储存目录等参数。
 
 运行：
-```bash
 python3 main.py
-```
 
 按需修改main.py中的参数： 
-```python3
 START_PAGE = 0  # 从哪一页submission开始爬起，0是最新的一页
 sleep_time = 5  # in second，登录失败时的休眠时间
-```
