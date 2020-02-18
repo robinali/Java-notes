@@ -26,7 +26,7 @@
 
 | [object]           |            |        |             |         |               |             |         |            |               |
 |--------------------|------------|--------|-------------|---------|---------------|-------------|---------|------------|---------------|
-| [AbstractCollection] |            |        |             |         |               | [AbstractMap] |         | [ArrayDeque] | [StringBuilder] |
+| [AbstractCollection] ([Collections]) |            |        |             |         |               | [AbstractMap] |         | [ArrayDeque] | [StringBuilder] |
 | [AbstractList]      |            |        | [AbstractSet] |         | [AbstractQueue] | [HashMap]     | [TreeMap] |            |               |
 | [ArrayList]          | [LinkedList] | [Vector] | [HashSet]     | [TreeSet] | [PriorityQueue] |             |         |            |               |
 |                    |            | [Stack]  |             |         |               |             |         |            |               |
@@ -565,3 +565,4 @@ List<int[]> directions = Arrays.asList(new int[] {0,1}, new int[] {0, -1}, new i
 [AudioInputStream]:https://docs.oracle.com/javase/8/docs/api/javax/sound/sampled/AudioInputStream.html
 [AbstractQueue]:https://docs.oracle.com/javase/8/docs/api/java/util/AbstractQueue.html
 [tableconvert]:https://tableconvert.com/
+[Collections]:https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html
