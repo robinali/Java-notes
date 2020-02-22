@@ -7,7 +7,7 @@ class Solution {
         int cut1 = 0, cut2 = 0;
         int cutL = 0, cutR = nums1.length;
         while(cut1 <= nums1.length) {
-            cut1 = (cutR - cutL) / 2 + cutL;
+            cut1 = （cutR + cutL) >>> 1;
             cut2 = len / 2 - cut1;
             double L1 = (cut1 == 0) ? Integer.MIN_VALUE : nums1[cut1 - 1];
             double L2 = (cut2 == 0) ? Integer.MIN_VALUE : nums2[cut2 - 1];
