@@ -31,6 +31,9 @@
 | [ArrayList]          | [LinkedList] | [Vector] | [HashSet]     | [TreeSet] | [PriorityQueue] |             |         |            |               |
 |                    |            | [Stack]  |             |         |               |             |         |            |               |
 
+[Character](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
+
+
 ## [Binary Literals](https://docs.oracle.com/javase/8/docs/technotes/guides/language/binary-literals.html)
 ```java
 // An 8-bit 'byte' value:
