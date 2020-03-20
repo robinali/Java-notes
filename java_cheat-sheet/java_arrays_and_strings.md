@@ -1,7 +1,7 @@
 # Table of Contents
 **[Arrays](#Arrays)**<br>
 **[String](#String)**<br>
-**[LeetCode Questions: Amazon](#LeetCode Questions: Amazon)**<br>
+**[LeetCode](#LeetCode)**<br>
 
 ## [Arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 ```java
@@ -78,6 +78,7 @@ substring(int beginIndex, int endIndex)
 ```
 [regex](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)
 
+## [LeetCode](https://leetcode.com)
 ## [LeetCode Questions: Amazon](https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/)
 
 ### Notes
