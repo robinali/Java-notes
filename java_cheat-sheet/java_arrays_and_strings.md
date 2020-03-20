@@ -82,15 +82,25 @@ substring(int beginIndex, int endIndex)
 ## [LeetCode Questions: Amazon](https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/)
 
 ### Notes
+
+#### [HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)
+```java
+Set<Character> hs = new HashSet<>();
+hs.add(key);
+hs.remove(key);
+hs.contains();
+hs.clear();
+hs.contains(key);
+hs.isEmpty();
+hs.iterator();
+```
 #### [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)
 ```java
-// Notes:
-// HashMap:
 Map<Integer, Integer> hm = new HashMap<>();
+hm.put(key, value);
+hm.putIfAbsent(key, value);
 hm.get(key); // return null if not found.
 hm.getOrDefaulte(key, value);
-hm.putIfAbsent(key, value);
-hm.put(key, value);
 hm.remove(key);
 hm.replace(key,value);
 hm.entrySet();
@@ -120,6 +130,30 @@ class Solution {
             idx++;
         }
         return new int[]{-1, -1};
+    }
+}
+```
+
+#### [Longest Substring Without Repeating Characters](https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/2961/)
+```java
+// Longest Substring Without Repeating Characters: HashSet + 2 pointers solution
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if(s == null || s.length() == 0) return 0;
+        
+        Set<Character> set = new HashSet<>();
+        int count = 0;
+        int i = 0, j = 0;
+        while(i < s.length()) {
+            if(set.contains(s.charAt(i))) {
+                set.remove(s.charAt(j++));
+            } else {
+                set.add(s.charAt(i));
+                count = Math.max(count, i - j + 1);
+                i++;
+            }
+        }
+        return count;
     }
 }
 ```
