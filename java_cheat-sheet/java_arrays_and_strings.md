@@ -75,6 +75,7 @@ split(String regex)
 startsWith(String prefix)
 subSequence(int beginIndex, int endIndex)
 substring(int beginIndex, int endIndex)
+trim();
 ```
 [regex](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)
 
@@ -82,7 +83,33 @@ substring(int beginIndex, int endIndex)
 ## [LeetCode Questions: Amazon](https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/)
 
 ### Notes
-
+#### [Integer](https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html)
+```java
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+Integer.valueOf(str);
+Integer.compare(numX, numY);
+Integer.bitCount(num);
+num.byteValue();
+num.doubleValue();
+num.floatValue();
+Integer.getInteger(str);
+Integer.hashCode();
+```
+#### [Character](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
+```java
+Character.compare(chX, chY);
+Character.getNumericValue(ch);
+Character.hashCode();
+Character.isDigit(ch);
+Character.isLetter(ch);
+Character.isLowerCase(ch);
+Character.isSpaceChar(ch);
+Character.isUpperCase(ch);
+Character.isWhitespace(ch);
+Character.toLowerCase(ch);
+Character.toUpperCase(ch);
+```
 #### [HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)
 ```java
 Set<Character> hs = new HashSet<>();
