@@ -110,6 +110,31 @@ Character.isWhitespace(ch);
 Character.toLowerCase(ch);
 Character.toUpperCase(ch);
 ```
+#### [StringBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+```java
+StringBuilder sb = new StringBuilder();
+sb.append(ch);
+sb.append(num);
+sb.append(str);
+sb.append(charArr)
+sb.capacity();
+sb.charAt(idx);
+sb.delete(startIdx, endIdx);
+sb.ensureCapacity(minimumCapacity);
+sb.indexOf(str);
+sb.insert(offset, ch);
+sb.lastIndexOf(str);
+sb.length();
+sb.replace(startIdx, endIdx, str);
+sb.reverse();
+sb.setCharAt(index, ch);
+sb.setLength(newLength);
+sb.subSequence(startIdx, endIdx);
+sb.substring(startIdx);
+sb.substring(startIdx, endIdx);
+sb.toString();
+sb.trimToSize();
+``` 
 #### [HashSet](https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html)
 ```java
 Set<Character> hs = new HashSet<>();
