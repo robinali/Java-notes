@@ -1,6 +1,7 @@
 # Table of Contents
 **[Arrays](#Arrays)**<br>
 **[String](#String)**<br>
+**[LeetCode Questions: Amazon](#LeetCode Questions: Amazon)**<br>
 
 ## [Arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
 ```java
@@ -76,3 +77,43 @@ subSequence(int beginIndex, int endIndex)
 substring(int beginIndex, int endIndex)
 ```
 [regex](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum)
+
+## [LeetCode Questions: Amazon](https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/)
+
+### Notes
+#### HashMap
+```java
+// Notes:
+// HashMap:
+Map<Integer, Integer> hm = new HashMap<>();
+hm.getOrDefaulte(key, -1);
+hm.putIfAbsent(-1, -1);
+hm.put(num, idx);
+
+```
+### [HashTable](https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/)
+HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key or value.
+
+
+### Solutions
+#### [Two Sum](https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/508/)
+```java
+// Two Sum: HashMap solution
+class Solution {
+    private Map<Integer, Integer> hm;
+    
+    public int[] twoSum(int[] nums, int target) {
+        this.hm = new HashMap<>();
+        int idx = 0;
+        for(int num: nums) {
+            int pair = this.hm.getOrDefault(num, -1);
+            if(pair >= 0) return new int[]{pair, idx};
+            else {
+                this.hm.put(target - num, idx);
+            }
+            idx++;
+        }
+        return new int[]{-1, -1};
+    }
+}
+```
