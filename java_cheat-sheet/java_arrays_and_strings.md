@@ -81,18 +81,23 @@ substring(int beginIndex, int endIndex)
 ## [LeetCode Questions: Amazon](https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/)
 
 ### Notes
-#### HashMap
+#### [HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html)
 ```java
 // Notes:
 // HashMap:
 Map<Integer, Integer> hm = new HashMap<>();
-hm.getOrDefaulte(key, -1);
-hm.putIfAbsent(-1, -1);
-hm.put(num, idx);
-
+hm.get(key); // return null if not found.
+hm.getOrDefaulte(key, value);
+hm.putIfAbsent(key, value);
+hm.put(key, value);
+hm.remove(key);
+hm.replace(key,value);
+hm.entrySet();
+hm.keySet();
+hm.values();
 ```
-### [HashTable](https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/)
-HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key or value.
+### [Hashtable](https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html)
+[HashMap allows one null key and multiple null values whereas Hashtable doesn’t allow any null key or value.](https://www.geeksforgeeks.org/differences-between-hashmap-and-hashtable-in-java/)
 
 
 ### Solutions
