@@ -1,27 +1,24 @@
 class Solution {
-    // 159
-    // Reference: cspiration
+    /**
+        Reference: https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/solution/
+    */
     public int lengthOfLongestSubstringTwoDistinct(String s) {
-        // Time: O(n) Sapce: O(n)
-        if(s == null || s.length() == 0) return 0;
-        HashMap<Character, Integer> map = new HashMap<>();
-        int start = 0, end = 0;
-        int res = 0;
-        while(end < s.length()) {
-            if(map.size() <= 2) {
-                map.put(s.charAt(end), end);
-                end++;
+        if(s.length() < 3) return s.length();
+        
+        int left = 0, right = 0;
+        HashMap<Character, Integer> hm = new HashMap<>();
+        int max_len = 2;
+        while(right < s.length()) {
+            if(hm.size() < 3) {
+                hm.put(s.charAt(right), right++);
             }
-            if(map.size() > 2) {
-                int leftMost = s.length();
-                for(int num : map.values()) {
-                    leftMost = Math.min(leftMost, num);
-                }
-                map.remove(s.charAt(leftMost));
-                start = leftMost + 1;
+            if(hm.size() == 3) {
+                int del_idx = Collections.min(hm.values());
+                hm.remove(s.charAt(del_idx));
+                left = del_idx + 1;
             }
-            res = Math.max(res, end - start);
+            max_len = Math.max(max_len, right - left);
         }
-        return res;
+        return max_len;
     }
 }

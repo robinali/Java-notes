@@ -8,18 +8,17 @@
  * }
  */
 class Solution {
-    // 98
-    // Reference: cspiration
-    public boolean isValidBST(TreeNode root) {
-        // Time: O(n) Sapce: O(n)
-        if(root == null) return true;
-        return validate(root, null, null);
+    private boolean isValidBST(TreeNode node, Integer lower, Integer upper) {
+        if(node == null) return true;
+        
+        if(lower != null && node.val <= lower) return false;
+        if(upper != null && node.val >= upper) return false;
+        if(!isValidBST(node.right, node.val, upper)) return false;
+        if(!isValidBST(node.left, lower, node.val)) return false;
+        return true;
     }
     
-    private boolean validate(TreeNode root, Integer min, Integer max) {
-        if(root == null) return true;
-        if(min != null && root.val <= min) return false;
-        if(max != null && root.val >= max) return false;
-        return validate(root.left, min, root.val) && validate(root.right, root.val, max);
+    public boolean isValidBST(TreeNode root) {
+        return isValidBST(root, null, null);
     }
 }
