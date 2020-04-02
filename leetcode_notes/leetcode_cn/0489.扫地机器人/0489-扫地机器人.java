@@ -15,65 +15,41 @@
  *     public void clean();
  * }
  */
+
+ /**
+    Reference: https://leetcode.com/problems/robot-room-cleaner/discuss/139057/Very-easy-to-understand-Java-solution
+ */
 class Solution {
     public void cleanRoom(Robot robot) {
-        // A number can be added to each visited cell
-        // use string to identify the class
-        Set<String> set = new HashSet<>();
-        int cur_dir = 0;   // 0: up, 90: right, 180: down, 270: left
-        backtrack(robot, set, 0, 0, 0);
+        Set<String> visited = new HashSet<>();
+        backtracking(robot, visited, 0, 0, 0);
     }
-
-    public void backtrack(Robot robot, Set<String> set, int i, 
-    			int j, int cur_dir) {
-    	String tmp = i + "->" + j;
-    	if(set.contains(tmp)) {
-            return;
-        }
+    
+    //be careful! has to be one direction v,>,^,<
+    // int[][] direction = {{1,0}, {0,1}, {-1,0}, {0,-1}};
+    // V,<,^,> & turnLeft() also works
+    private final int[][] DIRS = {{1, 0}, {0, 1}, {-1, 0},{0, -1}};
+    private void backtracking(Robot robot, Set<String> visited, int x, int y, int arrow) {
+        String path = x + "," + y;
+        if(visited.contains(path)) return;
+        visited.add(path);
+        robot.clean();
         
-    	robot.clean();
-    	set.add(tmp);
-
-    	for(int n = 0; n < 4; n++) {
-        // the robot can to four directions, we use right turn
-    		if(robot.move()) {
-    			// can go directly. Find the (x, y) for the next cell based on current direction
-    			int x = i, y = j;
-    			switch(cur_dir) {
-    				case 0:
-    					// go up, reduce i
-    					x = i-1;
-    					break;
-    				case 90:
-    					// go right
-    					y = j+1;
-    					break;
-    				case 180:
-    					// go down
-    					x = i+1;
-    					break;
-    				case 270:
-    					// go left
-    					y = j-1;
-    					break;
-    				default:
-    					break;
-    			}
-
-    			backtrack(robot, set, x, y, cur_dir);
-                       // go back to the starting position
-			robot.turnLeft();
-    			robot.turnLeft();
-    			robot.move();
-    			robot.turnRight();
-    			robot.turnRight();
-
-    		} 
-    		// turn to next direction
-    		robot.turnRight();
-    		cur_dir += 90;
-    		cur_dir %= 360;
-    	}
-
+        for(int i = 0; i < 4; i++) {
+            if(robot.move()) {
+                int nx = x + DIRS[arrow][0];
+                int ny = y + DIRS[arrow][1];
+                
+                backtracking(robot, visited, nx, ny, arrow);
+                //track back
+                robot.turnLeft();
+                robot.turnLeft();
+                robot.move();
+                robot.turnLeft();
+                robot.turnLeft();
+            }
+            robot.turnRight();
+            arrow = (arrow + 1) % 4;
+        }
     }
 }
